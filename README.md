@@ -38,6 +38,9 @@ I know, isn't it great!
 * Once there, read over the docs to get sense an understanding of what's happening. Notice how the preset can also be configured with an object. 
 * As a final hint, Note that you can use **"any valid query format supported by browswerlist"** to target your `browsers`.
 
+### Got an `Unexpected token` error?
+
+https://github.com/aquent-it-solutions/babelize/issues/2
 ---------------
 
 When you're done, send a PR may way, and I'll give it a review!
