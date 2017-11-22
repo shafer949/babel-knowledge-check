@@ -36,14 +36,21 @@ I know, isn't it great!
 * Use the `babel-cli` package
 * When you get to the step to install your preset, click on its link to be taking to its docs.  
 * Once there, read over the docs to get sense an understanding of what's happening. Notice how the preset can also be configured with an object. 
-* As a final hint, Note that you can use **"any valid query format supported by browswerlist"** to target your `browsers`.
-
-### Got an `Unexpected token` error?
-
-https://github.com/aquent-it-solutions/babelize/issues/2
+* Note that you can use **"any valid query format supported by browswerlist"** to target your `browsers`.
+* When you try to transpile app.js, for example `npm run build`, npm will throw a syntax error shown below. What's happening is that even though the [object rest/spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) is now listed as stage 3 (a candidate), in babel 6 it's [still listed as experimental](http://babeljs.io/docs/plugins/#transform-plugins-experimental). To solve this issue, we need to `npm install` the [object-rest-spread](http://babeljs.io/docs/plugins/transform-object-rest-spread/) plugin and add it to the `.babelrc` file (see plugin documentation for details). The error should go away after this.
+    ```
+    SyntaxError: src/app.js: Unexpected token (16:4)
+    14 | const otherDetails = {
+    15 |     info: 'This won\'t work in IE 11 unless transpiled...try it out!',
+    > 16 |     ...whoSaidIt
+        |     ^
+    17 | }
+    18 |
+    19 | container.innerText = triggered
+    ```
 ---------------
 
-When you're done, send a PR may way, and I'll give it a review!
+When you're done, send a PR my way, and I'll give it a review!
 
 Good luck and have fun,
 
